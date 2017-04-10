@@ -1,5 +1,5 @@
 
-# jaUplaod.js
+# jaUpload.js
 
 文件异步上传后路径回填表单
 
