@@ -1,5 +1,5 @@
 
-# jaUpload.js
+# jaUpload
 
 文件异步上传后路径回填表单
 
@@ -66,7 +66,7 @@ Yii2 框架使用 yiidoc/yii2-redactor 上传的配置
 
 ```js
 {
-	url: '*****', // 上传地址
+	url: '*****', // 配置的 yii2-redactor 上传地址
 	value: 'filelink'
 }
 ```
