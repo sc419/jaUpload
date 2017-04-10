@@ -56,8 +56,10 @@ jaUpload('.form-control', {/* 公用配置 会被 input data-upload 覆盖 */});
 
 
 
-
 ## DEMO
+
+
+[DEMO](http://cdn.asilu.com/demo/js/ja.upload.html)
 
 
 Yii2 框架使用 yiidoc/yii2-redactor 上传的配置
