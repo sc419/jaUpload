@@ -1,6 +1,7 @@
 /**
  * 文件异步上传后路径回填表单
  *
+ * https://github.com/sc419/jaUpload
  * 2017.04.10
 **/
 function jaUpload(selector, options){
