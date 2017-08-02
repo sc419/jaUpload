@@ -1,9 +1,9 @@
 /**
- * 文件异步上传后路径回填表单
+ * input 保存文件路径的解决方法
  *
- * https://github.com/sc419/jaUpload
- * 2017.04.10
+ *
 **/
+
 function jaUpload(selector, options){
 	var selector = selector || '[data-upload]';
 	var def_opt = {
@@ -43,6 +43,14 @@ function jaUpload(selector, options){
 		i = t.getMinutes(),
 		s = t.getSeconds();
 		return {date: [Y,m,d].join('-'), time: [H,i,s].join(':'), U: Math.floor(t / 1000)};
+	};
+	var after = function (n, t){
+		var parent = t.parentNode;
+		if( parent.lastChild == t){
+			parent.appendChild(n, t);
+		}else{
+			parent.insertBefore(n, t.nextSibling);
+		};
 	};
 
 	// 模板解析 {{key}}
@@ -155,7 +163,8 @@ function jaUpload(selector, options){
 		label.appendChild(input);
 
 		// 插入新建元素
-		dom.after(label);
+		// dom.after(label); // 360、QQ 浏览器不可用
+		after(label, dom);
 		if(opt.hidden) dom.type = 'hidden';
 	});
 
