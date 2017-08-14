@@ -1,7 +1,7 @@
 /**
  * input 保存文件路径的解决方法
  *
- *
+ * 2017.08.14 兼容 Yii2 , 增加 X-CSRF-Token 头
 **/
 
 function jaUpload(selector, options){
@@ -134,6 +134,10 @@ function jaUpload(selector, options){
 			// 文件上传
 			var xhr = new XMLHttpRequest();
 			xhr.open('POST', opt.url, true);
+			if(csrf_token = document.head.querySelector('meta[name=csrf-token][content]')){
+				xhr.setRequestHeader('X-CSRF-Token', csrf_token.content);
+			}
+			xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
 			xhr.onload = function(e) {
 				botton.innerText = opt.btn_name;
 				// 上传返回数据处理
